@@ -1,0 +1,83 @@
+<div class="recipeBody">
+    @for (item of recipeList; track $index) {
+
+        <div class="recipePresentationContainer">
+            <img src="{{item['recipePhoto']}}"  alt="">
+
+            <div class="recipePresentationContainer__titleSubtitle">
+                <h1 class="mainRecipeTitle">{{item['recipeTitle']}}</h1>
+                <span>{{item['recipeSubtitle']}}</span>
+            </div>
+        </div>
+
+        <div class="preparationTimeContaines">
+            <h4 class="preparationTimeContaines__title ">Preparation time:</h4>
+            <ul class="preparationTimeContaines__ul">
+            @for(eachPrepatationTime of item['preparationTime']; track $index){
+              <li class="preparationTimeContaines__name">Total:<span> {{eachPrepatationTime['total']}}</span></li>
+              <li class="preparationTimeContaines__name">Preparation:<span>{{eachPrepatationTime['preparation']}}</span></li>
+              <li class="preparationTimeContaines__name">Cooking:<span>{{eachPrepatationTime['cooking']}}</span></li>
+            }
+            </ul>
+        </div>
+
+            
+        <div class="ingredientContainer">
+            <h4 class="ingredientContainer__title">Ingredients</h4>
+            <ul>
+                @for(eachIngredient of item['ingredients']; track $index){
+                        <li>{{eachIngredient}}</li>
+                    }
+            </ul>
+        </div>
+
+        <hr>
+        
+        <div class="instructionContainer">
+            <h4 class="instructionContainer__title">Instructions</h4>
+            <ul>
+                @for(eachInstruction of item['instructions']; track $index){
+                    <li class="instructionContainer__title-li">{{eachInstruction['instructionTitle']}}
+                        <span>{{eachInstruction['instructionBody']}}</span>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <hr>
+
+        <div class="nutritionContainer">
+            <h4 class="nutritionContainer__title">Nutrition</h4>
+            @for(eachNutrition of item['nutrition']; track $index){
+                <div class="nutritionContainer__subtitle">{{eachNutrition['nutritionSub']}}</div>
+                @for (eachNutriData of eachNutrition['nutriData']; track $index){
+    
+                    <table class="myTable table table-sm">
+                   
+                        <tbody class="myTable__body">
+                            <tr>
+                                <td class="myTable__td">Calories</td>
+                                <td class="myTable__td myTableValue">{{eachNutriData.calories}}</td>                    
+                            </tr>
+                            <tr>
+                                <td class="myTable__td">Carbs</td>
+                                <td class="myTable__td myTableValue">{{eachNutriData.carbs}}</td>
+                            </tr>
+                            <tr>
+                                <td class="myTable__td">Protein</td>
+                                <td class="myTable__td myTableValue">{{eachNutriData.protein}}</td>
+                            </tr>
+                            <tr>
+                                <td class="myTable__td">Fat</td>
+                                <td class="myTable__td myTableValue">{{eachNutriData.fat}}</td>
+                            </tr>
+                        </tbody>
+                  </table>
+
+
+                   
+                        } 
+                }
+        </div>
+    }
+</div>

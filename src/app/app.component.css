@@ -1,0 +1,14 @@
+.routerOuterContainer{
+    width: 100%;
+    background-color: hsl(30, 54%, 90%);
+    padding: 150px;
+    font-family: "Outfit", sans-serif;
+    font-weight: 400;
+}
+
+@media screen and (max-width:375px) {
+    .routerOuterContainer{
+        padding: 0;
+        
+    }
+}

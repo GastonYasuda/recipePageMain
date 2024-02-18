@@ -1,0 +1,184 @@
+.recipeBody{
+    background-color:  hsl(330, 100%, 98%);
+    border-radius: 15px;
+    width: 800px;
+    margin: auto;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: hsl(24, 5%, 18%);;
+}
+
+.recipePresentationContainer{
+
+    & img{
+        width: 100%;
+        text-align: center;
+        border-radius: 15px;
+    }
+
+    & .recipePresentationContainer__titleSubtitle{
+        & .mainRecipeTitle{
+            color: hsl(24, 5%, 18%);;
+            font-family: "Young Serif", serif;
+            margin: 25px 0;
+        }
+        & span{
+            font-weight: 400;
+        }
+    }
+}
+
+.preparationTimeContaines{
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 15px;
+    padding: 20px;
+    background-color:hsl(30, 18%, 87%);
+
+    & .preparationTimeContaines__title{
+        font-size: 16pt;
+        font-weight: 600;
+        color:hsl(257, 42%, 34%);;
+    }
+    & .preparationTimeContaines__ul{
+        & li{
+            padding: 5px 20px;
+            font-weight: 600;
+        }
+        & li::marker{
+            color:hsl(30, 10%, 34%);  
+        }
+
+        & .preparationTimeContaines__name{
+            color:hsl(30, 10%, 34%);
+
+        }
+        
+        & span{
+            font-weight: 200;
+            margin-left: 5px;
+        }
+    }
+}
+
+.ingredientContainer{
+    & .ingredientContainer__title{
+        color:hsl(30, 10%, 34%);
+        font-family: "Young Serif", serif;
+        margin: 25px 0;
+    }
+
+    & li{
+        padding: 5px 20px 0; 
+    }
+    & li::marker{
+        color:hsl(30, 10%, 34%);
+    }
+}
+
+
+hr{
+    width: 90%;
+    margin: 25px auto;
+}
+
+.instructionContainer{
+    & .instructionContainer__title{
+        color:hsl(30, 10%, 34%);
+        font-family: "Young Serif", serif;
+            margin: 25px 0;
+    }
+    & .instructionContainer__title-li{
+        color:hsl(30, 10%, 34%);
+        font-weight: 600;
+        padding: 5px 20px 0; 
+        margin: 10px 0;
+        list-style-type: decimal;
+
+
+        & span{
+            color:hsl(332, 51%, 32%);
+            font-weight: 400;
+        }
+    }
+        & li::marker{
+            color:hsl(30, 10%, 34%);
+        }
+}
+
+.nutritionContainer{
+    width: 100%;
+    & .nutritionContainer__title{
+        color:hsl(30, 10%, 34%);
+        font-family: "Young Serif", serif;
+        margin: 25px 0;
+    }
+
+    & .nutritionContainer__subtitle{
+        margin: 25px 0;
+    }
+
+    & .nutritionContainer__ul{  
+        & li{
+            list-style: none;
+
+            & span{
+                color: hsl(24, 5%, 18%);;
+            }
+        }
+    }
+}
+
+.myTable {
+    color:  hsl(24, 5%, 18%) !important;
+    --bs-table-bg:none !important;
+
+    & .myTable__body{
+
+        & .myTable__td{
+            padding: .25rem 5.25rem;
+                }
+    }
+}
+
+.myTableValue{
+    color:  hsl(24, 5%, 18%)!important;
+    font-weight: 600;
+}
+
+@media screen and (max-width:375px) {
+    .recipeBody{
+        padding: 0;
+        width: 100%;
+        border-radius: 0;
+        margin: auto ;
+        background-color: hsl(0, 0%, 100%);
+    }
+
+    .recipePresentationContainer{
+        & img{
+            border-radius: 0;
+        }
+    }
+
+    .preparationTimeContaines , .ingredientContainer,.instructionContainer, .nutritionContainer{
+        width: 90%;
+        margin: 25px auto ;
+    }
+    .recipePresentationContainer__titleSubtitle{
+        width: 90%;
+        margin: auto;
+    }
+    .myTable {    
+        & .myTable__body{    
+            & .myTable__td{
+                padding: 0.1rem 2.25rem;
+            }
+        }
+    }
+    .nutritionContainer{
+        padding-bottom: 30px;
+    }
+}
